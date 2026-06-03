@@ -50,11 +50,59 @@ const SINAIS = {
 };
 
 const ACOES = {
-  fisiologica: ["Antes de qualquer intervenção pedagógica, pergunte em particular: ele dormiu? comeu? está se sentindo bem fisicamente?", "Acione a equipe de apoio escolar se identificar privação sistemática — isso é responsabilidade institucional", "Crie um momento de acolhimento no início da aula — alunos no nível zero precisam de pausa antes de aprender qualquer coisa"],
-  seguranca: ["Mantenha a rotina da sua aula o mais previsível possível — para alunos em insegurança, saber o que vem a seguir é âncora", "Converse em particular, sem pressão — não para resolver o problema familiar, mas para comunicar que você viu e que ele não está invisível", "Avise sobre qualquer mudança com antecedência — para esse aluno, surpresa é ameaça, não diversão"],
-  pertencimento: ["Crie oportunidades estruturadas de conexão — trabalhos em dupla onde ele tenha papel definido e necessário", "Observe os recreios — isolamento nesses momentos é dado clínico, não opção pessoal", "Se há bullying envolvido, acione o protocolo institucional imediatamente — não é problema que a sala resolve sozinha"],
-  estima: ["Encontre algo genuíno para reconhecer nesse aluno publicamente — não elogio vazio, algo real que ele fez ou é", "Nunca o corrija ou discipline publicamente se puder evitar — a plateia amplifica a humilhação", "Dê a ele um papel de responsabilidade na sala — algo que comunique 'você tem valor aqui'"],
-  autorrealizacao: ["Converse sobre o que ele faz fora da escola — às vezes o potencial está em lugar que o currículo nunca tocou", "Conecte o conteúdo à vida real dele — um exemplo concreto do 'para que serve' pode reacender o engajamento", "Proponha um desafio além do básico — aluno desengajado por tédio precisa de mais complexidade, não menos"],
+  fisiologica: [
+    ["Antes de qualquer intervenção pedagógica, pergunte em particular: ele dormiu? comeu? está se sentindo bem fisicamente?", "Acione a equipe de apoio escolar se identificar privação sistemática — isso é responsabilidade institucional, não só sua", "Crie um momento de acolhimento no início da aula — alunos no nível zero precisam de pausa antes de aprender qualquer coisa"],
+    ["Não exija atenção antes de verificar as condições básicas — pergunte discretamente como ele está antes de começar a aula", "Se a privação é recorrente, registre e comunique à coordenação — um aluno sem o básico é questão de proteção, não de disciplina", "Reduza demandas cognitivas para esse aluno nesse momento — ele não está em condições de processar, e forçar piora a situação"],
+    ["Observe padrões: se ele chega sempre assim na mesma hora ou dia, há algo sistemático acontecendo em casa", "Ofereça uma saída digna — 'você quer tomar água e respirar um pouco?' — antes de qualquer cobrança", "Documente o comportamento com datas e contexto para ter dados quando conversar com a família ou equipe pedagógica"],
+  ],
+  seguranca: [
+    ["Mantenha a rotina da sua aula o mais previsível possível — para alunos em insegurança, saber o que vem a seguir é âncora", "Converse em particular, sem pressão — não para resolver o problema familiar, mas para comunicar que você viu e que ele não está invisível", "Avise sobre qualquer mudança com antecedência — para esse aluno, surpresa é ameaça, não diversão"],
+    ["Antes de iniciar qualquer atividade, diga o que vai acontecer — sequência clara é segurança para esse aluno", "Não reaja à reação desproporcional — responda ao que está por baixo dela: 'eu vi que algo te incomodou. Podemos conversar depois?'", "Crie um sinal ou combinação privada com ele — algo que comunique 'está tudo bem, você está seguro aqui'"],
+    ["Identifique o que dispara a reação e antecipe — se você sabe que mudanças o desestabilizam, prepare-o com antecedência", "Use linguagem de controle pequeno: 'você pode escolher onde sentar hoje' — dar micro-escolhas reduz a sensação de ameaça", "Aproxime a família com cuidado — às vezes a instabilidade está em casa, e a escola é o único lugar previsível que ele tem"],
+  ],
+  pertencimento: [
+    ["Crie oportunidades estruturadas de conexão — trabalhos em dupla onde ele tenha papel definido e necessário", "Observe os recreios — isolamento nesses momentos é dado clínico, não opção pessoal", "Se há bullying envolvido, acione o protocolo institucional imediatamente — não é problema que a sala resolve sozinha"],
+    ["Coloque-o em dupla com alguém que tem perfil compatível — não force amizade, crie condição para ela acontecer", "Dê a ele uma responsabilidade pública na sala — ajudar a distribuir material, liderar uma atividade — isso cria visibilidade positiva", "Verifique nos recreios: se ele está sempre sozinho, chame a atenção da equipe — isolamento prolongado precisa de intervenção estruturada"],
+    ["Mencione o nome dele positivamente na frente da turma — ser visto pelo professor muda a percepção dos colegas sobre quem ele é", "Crie projetos em grupo com papéis claros — alunos isolados frequentemente não sabem como entrar num grupo sem uma estrutura que facilite", "Converse individualmente: 'como você está se sentindo com a turma?' — às vezes ele só precisa que alguém pergunte"],
+  ],
+  estima: [
+    ["Encontre algo genuíno para reconhecer nesse aluno publicamente — não elogio vazio, algo real que ele fez ou é", "Nunca o corrija ou discipline publicamente se puder evitar — a plateia amplifica a humilhação e cria ferida duradoura", "Dê a ele um papel de responsabilidade na sala — algo que comunique 'você tem valor aqui'"],
+    ["Chame-o em particular antes de uma atividade e diga que acredita que ele vai se sair bem — expectativa positiva muda desempenho", "Quando ele errar, corrija o erro, não a pessoa — 'essa resposta não está certa' é diferente de 'você não sabe'", "Crie situações onde ele possa demonstrar algo que sabe fazer bem — toda criança tem uma área de competência, encontre a dele"],
+    ["Observe o que ele faz quando ninguém está cobrando — ali está a pista do que ele valoriza em si mesmo", "Evite comparações com outros alunos, mesmo positivas — 'você é melhor que X' cria hierarquia, não autoestima genuína", "Peça a opinião dele sobre algo relevante para a turma — ser consultado comunica que sua perspectiva tem valor"],
+  ],
+  autorrealizacao: [
+    ["Converse sobre o que ele faz fora da escola — às vezes o potencial está em lugar que o currículo nunca tocou", "Conecte o conteúdo à vida real dele — um exemplo concreto do 'para que serve' pode reacender o engajamento", "Proponha um desafio além do básico — aluno desengajado por tédio precisa de mais complexidade, não menos"],
+    ["Pergunte o que ele faz quando ninguém está olhando — jogos, músicas, desenhos, histórias. Isso revela onde o potencial vive", "Ofereça variações da tarefa — 'você pode fazer do jeito padrão ou pode me surpreender' — autonomia ativa engajamento", "Fale sobre seu próprio processo de descoberta — quando você encontrou o que te apaixona? Isso abre a conversa de forma genuína"],
+    ["Encontre um projeto ou atividade extracurricular que conecte com o que ele demonstra ter interesse — e indique ativamente", "Mostre exemplos de pessoas que fizeram algo incomum com seus talentos — o que parece 'inútil' hoje pode ser profissão amanhã", "Reduza a pressão por resultado e aumente o espaço para exploração — alunos desmotivados raramente precisam de mais cobrança"],
+  ],
+};
+
+const FRASES_FINAIS = {
+  fisiologica: [
+    "Comportamento é sintoma. Antes de corrigir o que você vê, investigue o que está por baixo.",
+    "Um aluno que não tem o básico atendido não está te desafiando — está sobrevivendo. Mude a pergunta.",
+    "Antes de exigir presença, verifique se as condições para ela existem.",
+  ],
+  seguranca: [
+    "Um aluno em modo de ameaça não consegue aprender. Sua primeira tarefa não é ensinar — é fazer ele se sentir seguro o suficiente para aprender.",
+    "Rotina não é rigidez pedagógica. Para esse aluno, é remédio.",
+    "O aluno que mais resiste à sua autoridade pode ser o que mais precisa de um adulto consistente na vida dele.",
+  ],
+  pertencimento: [
+    "A gangue, o grupo da bagunça, o amigo problemático — todos atendem a mesma necessidade que a escola não está atendendo. Quem você quer que atenda primeiro?",
+    "Nenhum aluno escolhe ser excluído. Ele só para de tentar pertencer quando já foi rejeitado vezes demais.",
+    "O recreio conta. O que acontece fora da sua aula molda o que acontece dentro dela.",
+  ],
+  estima: [
+    "O aluno que mais te desafia é quase sempre o que mais precisa de reconhecimento. Não é coincidência.",
+    "Disciplina sem relação é só controle. E controle sem confiança não dura.",
+    "O elogio certo, na hora certa, para a pessoa certa, vale mais do que qualquer metodologia.",
+  ],
+  autorrealizacao: [
+    "Quando um aluno para de tentar, não é preguiça — é proteção. Ele decidiu que não tentar dói menos do que tentar e falhar.",
+    "Tédio crônico não é falta de interesse. É inteligência esperando um problema à altura.",
+    "Sua aula não precisa ser a resposta para esse aluno. Mas pode ser o lugar onde ele encontra a pergunta certa.",
+  ],
 };
 
 const POR_QUE = {
@@ -299,10 +347,10 @@ export default function App() {
               <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#4a6a8a", fontFamily: "'DM Sans'", fontWeight: 600, marginBottom: 14 }}>POR QUE ISSO ACONTECE</div>
               <div style={{ background: "#111e30", border: "1px solid " + need.color + "33", borderRadius: 14, overflow: "hidden" }}>
                 <div style={{ padding: "12px 20px", borderBottom: "1px solid #1a2a4a", background: need.color + "10" }}>
-                  <span style={{ fontFamily: "'DM Serif Display'", fontSize: 16, color: need.color }}>{POR_QUE[escolha].titulo}</span>
+                  <span style={{ fontFamily: "'DM Serif Display'", fontSize: 16, color: need.color }}>{pick(POR_QUE[escolha]).titulo}</span>
                 </div>
                 <div style={{ padding: "16px 20px" }}>
-                  <p style={{ fontSize: 14, lineHeight: 1.75, color: "#a0b0c0", fontFamily: "'DM Sans'" }}>{POR_QUE[escolha].texto}</p>
+                  <p style={{ fontSize: 14, lineHeight: 1.75, color: "#a0b0c0", fontFamily: "'DM Sans'" }}>{pick(POR_QUE[escolha]).texto}</p>
                 </div>
               </div>
             </div>
@@ -311,7 +359,7 @@ export default function App() {
             <div style={{ marginBottom: 24 }}>
               <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#4a6a8a", fontFamily: "'DM Sans'", fontWeight: 600, marginBottom: 14 }}>COMO AGIR</div>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {ACOES[escolha].map((a, i) => (
+                {pick(ACOES[escolha]).map((a, i) => (
                   <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", background: "#111e30", border: "1px solid #1a2a4a", borderRadius: 10, padding: "13px 18px" }}>
                     <span style={{ fontFamily: "'DM Serif Display'", fontSize: 22, color: need.color, minWidth: 18, flexShrink: 0 }}>{i + 1}</span>
                     <span style={{ fontSize: 14, lineHeight: 1.6, color: "#d0c8be", fontFamily: "'DM Sans'" }}>{a}</span>
@@ -323,7 +371,7 @@ export default function App() {
             {/* Frase final */}
             <div style={{ background: need.color + "15", border: "1px solid " + need.color + "33", borderRadius: 14, padding: "22px", marginBottom: 28 }}>
               <span style={{ fontFamily: "'DM Serif Display'", fontSize: 56, color: need.color, opacity: 0.5, display: "block", lineHeight: 0.8, marginBottom: 10 }}>"</span>
-              <p style={{ fontFamily: "'DM Serif Display'", fontSize: 16, lineHeight: 1.7, fontStyle: "italic" }}>{FRASES_FINAIS[escolha]}</p>
+              <p style={{ fontFamily: "'DM Serif Display'", fontSize: 16, lineHeight: 1.7, fontStyle: "italic" }}>{pick(FRASES_FINAIS[escolha])}</p>
             </div>
 
             <div style={{ textAlign: "center" }}>
