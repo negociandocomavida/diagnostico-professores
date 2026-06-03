@@ -77,6 +77,34 @@ const ACOES = {
   ],
 };
 
+const POR_QUE = {
+  fisiologica: [
+    { titulo: "Por que o corpo reage assim?", texto: "Quando necessidades físicas básicas não são atendidas — sono, alimentação, ausência de dor — o cérebro entra em modo de sobrevivência. O córtex pré-frontal, responsável pelo raciocínio e autocontrole, reduz sua atividade. O que assume o comando é a amígdala: a parte mais primitiva do cérebro, que só conhece ameaça e resposta. Nesse estado, não existe capacidade real de aprender, planejar ou se relacionar bem. Não é falta de vontade — é fisiologia." },
+    { titulo: "O organismo está racionando recursos — não sabotando a aprendizagem", texto: "Quando energia, descanso ou saúde estão comprometidos, o cérebro desativa funções consideradas não essenciais para a sobrevivência — como atenção, memória e regulação emocional. O comportamento que você vê não é escolha do aluno: é o sistema nervoso priorizando o que parece mais urgente." },
+    { titulo: "Por que exigir atenção de quem está sobrevivendo não funciona?", texto: "Privação física eleva cortisol e reduz serotonina. O resultado é que situações normais parecem insuperáveis, tolerância cai, e qualquer demanda adicional vira sobrecarga. Antes de qualquer intervenção pedagógica, a pergunta correta é: esse aluno tem o básico atendido?" },
+  ],
+  seguranca: [
+    { titulo: "Por que a mente em alerta não consegue aprender?", texto: "Quando o ambiente é imprevisível ou ameaçador, o sistema nervoso dispara cortisol — o hormônio do estresse. Em doses altas e contínuas, ele destrói a capacidade de pensar com clareza, dormir bem e confiar nas pessoas. O cérebro passa a varrer o ambiente em busca de perigos o tempo todo. É por isso que alunos em insegurança reagem de forma desproporcional e têm dificuldade de se concentrar." },
+    { titulo: "Reação desproporcional é sinal — não comportamento", texto: "Um aluno que explode diante de mudanças pequenas, que precisa controlar tudo ao redor, que reage com ansiedade a imprevistos — está operando com um sistema nervoso em modo de ameaça. A escola pode ser o único ambiente previsível que ele tem. Isso é uma responsabilidade enorme — e uma oportunidade." },
+    { titulo: "Por que rotina é remédio para esse aluno?", texto: "Para quem vive em ambiente imprevisível — em casa ou na vida — previsibilidade não é detalhe pedagógico, é necessidade fisiológica. Saber o que vem a seguir acalma o sistema nervoso, libera capacidade cognitiva e permite que o aluno finalmente preste atenção no que você tem a dizer." },
+  ],
+  pertencimento: [
+    { titulo: "Por que a ausência de conexão dói tanto?", texto: "Estudos de neuroimagem mostram que rejeição social ativa as mesmas regiões cerebrais que a dor física. Não é exagero — é literalmente a mesma experiência neurológica. Para nossos ancestrais, ser excluído do grupo significava morte. O cérebro nunca atualizou esse sistema. Por isso solidão e rejeição comprometem o sono, o humor, a imunidade e a capacidade de aprender." },
+    { titulo: "Isolamento não é timidez — é sofrimento ativo", texto: "Um aluno que come sozinho, que nunca é chamado para grupos, que fica à margem nos recreios — está experienciando algo que o cérebro registra como dor física. O silêncio dele na sala não é apático: é o silêncio de quem já desistiu de tentar pertencer." },
+    { titulo: "Por que o grupo de risco atrai mais do que a escola?", texto: "Gangues, turmas problemáticas e grupos de bullying atendem a mesma necessidade que ambientes saudáveis não estão oferecendo: pertencimento. Se a escola não cria vínculos legítimos, o aluno vai encontrá-los em outro lugar. A pergunta não é por que ele foi — é o que estava faltando aqui." },
+  ],
+  estima: [
+    { titulo: "Por que falta de reconhecimento gera comportamento difícil?", texto: "A autoestima funciona como termostato interno. Quando está baixa, o cérebro interpreta situações cotidianas como ameaças ao valor pessoal. A frustração repetida dispara o mesmo sistema de estresse que uma ameaça física. Com o tempo, o cérebro começa a antecipar a falha antes de tentar — como proteção. O resultado é paralisia, agressividade defensiva ou busca de atenção pela via negativa." },
+    { titulo: "Bagunça é pedido de reconhecimento mal formulado", texto: "O aluno que interrompe, que faz graça, que desafia — quase sempre está buscando uma coisa: ser visto. Se os caminhos legítimos para reconhecimento estão bloqueados, ele encontra os que funcionam. Interrupção funciona. Provocação funciona. O problema não é o método — é a necessidade não atendida por trás dele." },
+    { titulo: "Por que humilhação pública tem efeito tão duradouro?", texto: "Quando um aluno é corrigido, punido ou exposto na frente dos outros, o cérebro registra isso como ameaça social grave. A memória emocional é mais duradoura do que a cognitiva — o aluno pode esquecer o conteúdo da aula, mas não vai esquecer como se sentiu. Esse é o motivo pelo qual relação precisa vir antes de instrução." },
+  ],
+  autorrealizacao: [
+    { titulo: "Por que desengajamento gera sofrimento?", texto: "Quando o aluno não encontra conexão entre o que aprende e quem ele é, o cérebro descarta o conteúdo como irrelevante para a sobrevivência. Neurologicamente, falta de propósito reduz a produção de dopamina — o neurotransmissor da motivação. O que parece preguiça ou indiferença é frequentemente um sinal de que o potencial desse aluno nunca encontrou onde se encaixar." },
+    { titulo: "Tédio crônico pode ser inteligência sem espaço", texto: "Um aluno que parece indiferente a tudo pode não estar desinteressado — pode estar subestimado. O currículo uniforme aplicado a talentos diferentes é uma forma sistemática de frustrar autorrealização. Antes de concluir que ele não quer nada, vale perguntar: o que já foi oferecido que despertou algo nele?" },
+    { titulo: "Por que 'para que serve isso?' é pergunta séria, não desaforo?", texto: "Quando o aluno pergunta a utilidade do que aprende, ele está sinalizando a necessidade mais alta de Maslow: fazer sentido. O cérebro não investe atenção e memória em informação percebida como irrelevante. Conectar conteúdo à vida real não é facilitação — é neurociência aplicada." },
+  ],
+};
+
 const FRASES_FINAIS = {
   fisiologica: [
     "Comportamento é sintoma. Antes de corrigir o que você vê, investigue o que está por baixo.",
@@ -105,21 +133,7 @@ const FRASES_FINAIS = {
   ],
 };
 
-const POR_QUE = {
-  fisiologica: { titulo: "Por que o corpo reage assim?", texto: "Quando necessidades físicas básicas não são atendidas — sono, alimentação, ausência de dor — o cérebro entra em modo de sobrevivência. O córtex pré-frontal, responsável pelo raciocínio e autocontrole, reduz sua atividade. O que assume o comando é a amígdala: a parte mais primitiva do cérebro, que só conhece ameaça e resposta. Nesse estado, não existe capacidade real de aprender, planejar ou se relacionar bem. Não é falta de vontade — é fisiologia." },
-  seguranca: { titulo: "Por que a mente reage assim?", texto: "Quando o ambiente é imprevisível ou ameaçador, o sistema nervoso dispara cortisol — o hormônio do estresse. Em doses altas e contínuas, ele destrói a capacidade de pensar com clareza, dormir bem e confiar nas pessoas. O cérebro passa a varrer o ambiente em busca de perigos o tempo todo, mesmo quando não há nenhum. É por isso que alunos em insegurança reagem de forma desproporcional e têm dificuldade de se concentrar." },
-  pertencimento: { titulo: "Por que a ausência de conexão dói tanto?", texto: "Estudos de neuroimagem mostram que rejeição social ativa as mesmas regiões cerebrais que a dor física. Não é exagero — é literalmente a mesma experiência neurológica. Para nossos ancestrais, ser excluído do grupo significava morte. O cérebro nunca atualizou esse sistema. Por isso solidão e rejeição comprometem o sono, o humor, a imunidade e a capacidade de tomar boas decisões." },
-  estima: { titulo: "Por que falta de reconhecimento afeta tanto?", texto: "A autoestima funciona como um termostato interno de segurança social. Quando está baixa, o cérebro interpreta situações cotidianas como ameaças ao valor pessoal. A frustração repetida dispara o mesmo sistema de estresse que uma ameaça física. Com o tempo, o cérebro começa a antecipar a falha antes mesmo de tentar — como mecanismo de proteção. O resultado é a paralisia, a agressividade defensiva ou a busca por atenção pela via negativa." },
-  autorrealizacao: { titulo: "Por que desengajamento gera sofrimento?", texto: "Quando o aluno não encontra conexão entre o que aprende e quem ele é, o cérebro descarta o conteúdo como irrelevante para a sobrevivência. Neurologicamente, falta de propósito reduz a produção de dopamina — o neurotransmissor da motivação. O que parece preguiça ou indiferença é frequentemente um sinal de que o potencial desse aluno nunca encontrou onde se encaixar." },
-};
 
-const FRASES_FINAIS = {
-  fisiologica: "Comportamento é sintoma. Antes de corrigir o que você vê, investigue o que está por baixo.",
-  seguranca: "Um aluno em modo de ameaça não consegue aprender. Sua primeira tarefa não é ensinar — é fazer ele se sentir seguro o suficiente para aprender.",
-  pertencimento: "A gangue, o grupo da bagunça, o amigo problemático — todos atendem a mesma necessidade que a escola não está atendendo. Quem você quer que atenda primeiro?",
-  estima: "O aluno que mais te desafia é quase sempre o que mais precisa de reconhecimento. Não é coincidência.",
-  autorrealizacao: "Quando um aluno para de tentar, não é preguiça — é proteção. Ele decidiu que não tentar dói menos do que tentar e falhar.",
-};
 
 function detectarSinais(texto, necessidade) {
   const lower = texto.toLowerCase();
@@ -152,6 +166,10 @@ function diagnose(text) {
     return [ranked[0].need, second];
   }
   return [ranked[0].need, ranked[1].need];
+}
+
+function pick(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export default function App() {
@@ -374,7 +392,10 @@ export default function App() {
               <p style={{ fontFamily: "'DM Serif Display'", fontSize: 16, lineHeight: 1.7, fontStyle: "italic" }}>{pick(FRASES_FINAIS[escolha])}</p>
             </div>
 
-            <div style={{ textAlign: "center" }}>
+            <div style={{ textAlign: "center", display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
+              <button onClick={() => { setEscolha(null); setPhase("opcoes"); }} style={{ background: "transparent", color: "#7a9abf", border: "1px solid #7a9abf44", borderRadius: 8, padding: "11px 22px", fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", fontFamily: "'DM Sans'", cursor: "pointer" }}>
+                ↑ VER OUTRA POSSIBILIDADE
+              </button>
               <button onClick={reset} style={{ background: "transparent", color: "#c8b89a", border: "1px solid #c8b89a33", borderRadius: 8, padding: "11px 22px", fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", fontFamily: "'DM Sans'", cursor: "pointer" }}>
                 ← OBSERVAR OUTRO ALUNO
               </button>
