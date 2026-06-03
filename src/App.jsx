@@ -1,5 +1,31 @@
 import { useState } from "react";
 
+const SUPABASE_URL = "https://fqtofzjtbcyocrsibahn.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZxdG9memp0YmN5b2Nyc2liYWhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA0NjMxOTcsImV4cCI6MjA5NjAzOTE5N30.SKWTkN4ukO_qNzmib7bvKAMZZo1uk-09uMVctXWSkCs";
+
+async function salvarFeedback(necessidade, textoUsuario, fb, comentario) {
+  try {
+    await fetch(SUPABASE_URL + "/rest/v1/feedbacks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "apikey": SUPABASE_KEY,
+        "Authorization": "Bearer " + SUPABASE_KEY,
+        "Prefer": "return=minimal"
+      },
+      body: JSON.stringify({
+        site: "professor",
+        necessidade,
+        texto_usuario: textoUsuario,
+        feedback: fb,
+        comentario
+      })
+    });
+  } catch(e) {
+    console.error("Erro ao salvar:", e);
+  }
+}
+
 const NEEDS = {
   fisiologica: { label: "Necessidade Fisiológica", short: "Sobrevivência", color: "#c8b89a", icon: "◉", level: 1 },
   seguranca: { label: "Necessidade de Segurança", short: "Controle", color: "#e8c96a", icon: "◈", level: 2 },
@@ -177,6 +203,17 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [escolha, setEscolha] = useState(null);
   const [phase, setPhase] = useState("input"); // input | opcoes | result
+  const [feedback, setFeedback] = useState(null);
+  const [comentario, setComentario] = useState("");
+  const [feedbackEnviado, setFeedbackEnviado] = useState(false);
+
+  const enviarFeedback = (fb) => setFeedback(fb);
+
+  const enviarComentario = async () => {
+    if (feedbackEnviado) return;
+    await salvarFeedback(escolha, input, feedback, comentario);
+    setFeedbackEnviado(true);
+  };
 
   const analyze = () => {
     if (input.trim().length < 15) return;
@@ -195,6 +232,9 @@ export default function App() {
     setResult(null);
     setEscolha(null);
     setPhase("input");
+    setFeedback(null);
+    setComentario("");
+    setFeedbackEnviado(false);
   };
 
   const need = escolha ? NEEDS[escolha] : null;
@@ -390,6 +430,54 @@ export default function App() {
             <div style={{ background: need.color + "15", border: "1px solid " + need.color + "33", borderRadius: 14, padding: "22px", marginBottom: 28 }}>
               <span style={{ fontFamily: "'DM Serif Display'", fontSize: 56, color: need.color, opacity: 0.5, display: "block", lineHeight: 0.8, marginBottom: 10 }}>"</span>
               <p style={{ fontFamily: "'DM Serif Display'", fontSize: 16, lineHeight: 1.7, fontStyle: "italic" }}>{pick(FRASES_FINAIS[escolha])}</p>
+            </div>
+
+            {/* Feedback */}
+            <div style={{ background: "#111e30", border: "1px solid #1a2a4a", borderRadius: 14, padding: "22px", marginBottom: 28 }}>
+              <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#4a6a8a", fontFamily: "'DM Sans'", fontWeight: 600, marginBottom: 14 }}>ESSA LEITURA FEZ SENTIDO PARA VOCÊ?</div>
+
+              {!feedbackEnviado ? (
+                <>
+                  <div style={{ display: "flex", gap: 10, marginBottom: 16 }}>
+                    <button onClick={() => enviarFeedback("sim")}
+                      style={{ flex: 1, padding: "10px", borderRadius: 8, border: "1px solid " + (feedback === "sim" ? need.color : "#1a2a4a"), background: feedback === "sim" ? need.color + "22" : "transparent", color: feedback === "sim" ? need.color : "#6a8aaa", fontFamily: "'DM Sans'", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
+                      ✓ Sim, fez sentido
+                    </button>
+                    <button onClick={() => enviarFeedback("nao")}
+                      style={{ flex: 1, padding: "10px", borderRadius: 8, border: "1px solid " + (feedback === "nao" ? "#e87a7a" : "#1a2a4a"), background: feedback === "nao" ? "#e87a7a22" : "transparent", color: feedback === "nao" ? "#e87a7a" : "#6a8aaa", fontFamily: "'DM Sans'", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>
+                      ✗ Não muito
+                    </button>
+                  </div>
+
+                  {feedback && (
+                    <>
+                      <div style={{ fontSize: 10, letterSpacing: "0.12em", color: "#4a6a8a", fontFamily: "'DM Sans'", fontWeight: 600, marginBottom: 8 }}>
+                        DEIXE UM COMENTÁRIO <span style={{ color: "#3a5a7a", fontWeight: 400, textTransform: "none", letterSpacing: 0 }}>(anônimo)</span>
+                      </div>
+                      <textarea
+                        rows={3}
+                        value={comentario}
+                        onChange={e => setComentario(e.target.value)}
+                        placeholder="O que você observou nesse aluno? Como foi a situação? Sua experiência pode ajudar outros educadores..."
+                        style={{ width: "100%", background: "#0d1826", border: "1px solid #1a2a4a", borderRadius: 8, padding: 12, color: "#f2f0eb", fontSize: 14, lineHeight: 1.6, fontFamily: "'DM Sans'", resize: "none", marginBottom: 12 }}
+                      />
+                      <p style={{ fontSize: 11, color: "#3a5a7a", fontFamily: "'DM Sans'", marginBottom: 12 }}>
+                        Seus comentários são anônimos e podem ajudar outros educadores que vivem situações parecidas.
+                      </p>
+                      <button onClick={enviarComentario}
+                        style={{ width: "100%", background: need.color, color: "#0d1826", border: "none", borderRadius: 8, padding: "11px", fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", fontFamily: "'DM Sans'", cursor: "pointer" }}>
+                        ENVIAR FEEDBACK
+                      </button>
+                    </>
+                  )}
+                </>
+              ) : (
+                <div style={{ textAlign: "center", padding: "16px 0" }}>
+                  <div style={{ fontSize: 24, marginBottom: 8 }}>🙏</div>
+                  <p style={{ fontFamily: "'DM Serif Display'", fontSize: 16, color: need.color, marginBottom: 6 }}>Obrigado pelo retorno!</p>
+                  <p style={{ fontSize: 13, color: "#6a8aaa", fontFamily: "'DM Sans'", lineHeight: 1.6 }}>Seu comentário anônimo ajuda a melhorar essa ferramenta e pode inspirar outros educadores.</p>
+                </div>
+              )}
             </div>
 
             <div style={{ textAlign: "center", display: "flex", flexDirection: "column", gap: 12, alignItems: "center" }}>
